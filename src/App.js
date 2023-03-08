@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { uid } from "uid";
 import Form from "./components/Form/Form";
 import "./App.css";
 import List from "./components/List/List";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [activities, setActivities] = useState([]);
-  const [weather, setWeather] = useState({});
+  const [activities, setActivities] = useLocalStorageState("activities",{defaultValue: [],});
+  const [weather, setWeather] = useLocalStorageState("weather",{defaultValue:[],});
   const url = "https://example-apis.vercel.app/api/weather";
   useEffect(() => {
     async function startFetching() {
@@ -14,9 +15,16 @@ function App() {
       const data = await respnose.json();
       setWeather(data);
       console.log(data);
+      
+
     }
-    startFetching();
-  }, [activities]);
+    const interval = setInterval (() => {
+      console.log("This will every 5 sec refreshed")
+      startFetching()
+    },5000);
+    return () => clearInterval(interval);
+    
+  }, );
 
   function handleAddActivity(event) {
     event.preventDefault();

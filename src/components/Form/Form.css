@@ -1,0 +1,22 @@
+form{
+   
+    padding:50px;
+    
+}
+.entry-form_fields{
+
+    margin-bottom: 10px;
+    
+    
+}
+label{
+    margin-right:10px;
+    
+}
+#name{
+    border-radius: 5px;
+}
+#good-or-bad-weather{
+    width: 25px;
+    height: 20px;
+}

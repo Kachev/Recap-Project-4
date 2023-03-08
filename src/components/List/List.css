@@ -1,0 +1,26 @@
+.headline{
+    max-width: 300px;
+    
+}
+.list{
+    display: flex;
+    justify-content: space-between;
+    border:1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.50);
+
+}
+.delete-button{
+    border:none;
+    background:none;
+    align-self: end;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.50);
+    width: 20px;
+    height: 20px;
+}
+li{
+    list-style: none;
+    
+}

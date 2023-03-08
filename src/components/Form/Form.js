@@ -1,10 +1,12 @@
+import  "./Form.css"
 import Button from "../Button/Button";
 function Form({ onAddActivity }) {
   return (
     <form onSubmit={onAddActivity}>
-      <h2>Add new Activity:</h2>
+      
       <div className="entry-form_fields">
-        <label htmlFor="name">Name</label>
+        <h2>Add new Activity:</h2>
+        <label htmlFor="name">Name:</label>
         <input type="text" name="name" id="name" />
       </div>
       <div className="entry-form_checkbox">

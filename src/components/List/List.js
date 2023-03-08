@@ -1,20 +1,22 @@
-import Button from "../Button/Button";
+
+import "./List.css";
 
 function List({ activities, weather, onDeleteActivity }) {
   return (
     <>
-      <h1>
+      <h2 className="headline">
         {weather.isGoodWeather
           ? "The weather is awesome!Go outside and"
           : " Bad weather outside! Here's whatyou can do now:"}
-      </h1>
-      <ul>
+      </h2>
+      <ul >
         {activities
           .filter((act) => act.isForGoodWeather === weather.isGoodWeather)
           .map((activity) => (
-            <li key={activity.id}>
-              {activity.name}{" "}
+            <li className="list" key={activity.id}>
+              <span className="list-item">{activity.name}</span>
               <button
+                className="delete-button"
                 type="button"
                 onClick={() => onDeleteActivity(activity.id)}
               >
